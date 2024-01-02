@@ -40,8 +40,8 @@ EOF
 sysctl -p > /dev/null 2>&1
 
 ### Install Packages
-yum install -y iptables container-selinux iptables libnetfilter_conntrack libnfnetlink libnftnl policycoreutils-python-utils cryptsetup
-yum install -y nfs-utils; yum install -y iscsi-initiator-utils; yum install -y zip zstd tree jq
+yum install -y iptables container-selinux libnetfilter_conntrack libnfnetlink libnftnl policycoreutils-python-utils cryptsetup
+yum install -y nfs-utils iscsi-initiator-utils; yum install -y zip zstd tree jq
 
 ### Modify Settings
 echo "InitiatorName=$(/sbin/iscsi-iname)" > /etc/iscsi/initiatorname.iscsi && systemctl enable --now iscsid
@@ -60,7 +60,7 @@ mv /usr/local/bin/aws /usr/bin/aws
 ### Install Cosign
 mkdir -p /opt/rancher/cosign
 cd /opt/rancher/cosign
-curl -#OL https://github.com/sigstore/cosign/releases/download/v1.8.0/cosign-linux-amd64
+curl -#OL https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64
 mv cosign-linux-amd64 /usr/bin/cosign
 chmod 755 /usr/bin/cosign
 
@@ -68,7 +68,7 @@ chmod 755 /usr/bin/cosign
 mkdir -p /opt/rancher/helm
 cd /opt/rancher/helm
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod 700 get_helm.sh && ./get_helm.sh
+chmod 755 get_helm.sh && ./get_helm.sh
 mv /usr/local/bin/helm /usr/bin/helm
 
 ### Setup RKE2 Server
