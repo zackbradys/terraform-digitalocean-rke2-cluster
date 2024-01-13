@@ -35,7 +35,7 @@ Please utilize GitHubs features such as Issues, Forks, and Pull Requests to cont
 ### About Me
 A little bit about me, my history, and what I've done in the industry. If you have any questions, please reach out to me on my GitHub (https://github.com/zackbradys)!
 - Former Contractor
-- U.S. Military Veteran
+- U.S. Military Reservist
 - Open-Source Contributor
 - Built and Exited a Digital Firm
 - Active Volunteer Firefighter/EMT
