@@ -40,8 +40,7 @@ EOF
 sysctl -p > /dev/null 2>&1
 
 ### Install Packages
-yum install -y iptables container-selinux libnetfilter_conntrack libnfnetlink libnftnl policycoreutils-python-utils cryptsetup
-yum install -y nfs-utils iscsi-initiator-utils; yum install -y zip zstd tree jq
+yum install -y iptables container-selinux libnetfilter_conntrack libnfnetlink libnftnl policycoreutils-python-utils cryptsetup nfs-utils iscsi-initiator-utils zip zstd tree jq
 
 ### Modify Settings
 echo "InitiatorName=$(/sbin/iscsi-iname)" > /etc/iscsi/initiatorname.iscsi && systemctl enable --now iscsid
@@ -56,13 +55,6 @@ unzip awscli-exe-linux-x86_64.zip
 rm -rf awscli-exe-linux-x86_64.zip
 sudo ./aws/install
 mv /usr/local/bin/aws /usr/bin/aws
-
-### Install Cosign
-mkdir -p /opt/rancher/cosign
-cd /opt/rancher/cosign
-curl -#OL https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64
-mv cosign-linux-amd64 /usr/bin/cosign
-chmod 755 /usr/bin/cosign
 
 ### Install Helm
 mkdir -p /opt/rancher/helm
