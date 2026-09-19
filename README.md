@@ -35,13 +35,3 @@ terraform apply --auto-approve
 ### Contributing
 
 Please utilize GitHubs features such as Issues, Forks, and Pull Requests to contribute to this code!
-
-### About Me
-
-A little bit about me and my history in the industry. If you have any questions, please reach out to me at zhbrady@zackbrady.com!
-
-- Former Contractor
-- U.S. Military Reservist
-- Open-Source Contributor
-- Built and Exited a Digital Firm
-- Active Volunteer Firefighter/EMT
